@@ -22,7 +22,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           # run Sonar analysis for the first Sonar host URL
-          sonar-scanner -Dsonar.host.url=$SONAR_HOST_URL
+          sonarscanner -Dsonar.host.url=$SONAR_HOST_URL
       - name: Analyze code quality on branch dev
         if: github.ref == 'refs/heads/dev'
         env:
@@ -30,7 +30,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           # run Sonar analysis for the second Sonar host URL
-          sonar-scanner -Dsonar.host.url=$SONAR_HOST_URL
+          sonarscanner -Dsonar.host.url=$SONAR_HOST_URL
       
 
       # If you wish to fail your job when the Quality Gate is red, uncomment the
